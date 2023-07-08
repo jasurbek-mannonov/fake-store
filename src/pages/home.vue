@@ -29,16 +29,22 @@
     </a-card>
   </div>
 
-  <img class="loading" v-else src="@/assets/images/loading.gif" alt="loading gif animation">
+  <img
+    class="loading"
+    v-else
+    src="@/assets/images/loading.gif"
+    alt="loading gif animation"
+  />
 
   <div style="display: none" v-for="product in products" :key="product.id">
     <a-image-preview-group
+    class="preview-image"
       :preview="{
         visible: product.visible,
         onVisibleChange: (vis) => (product.visible = vis),
       }"
     >
-      <a-image :src="product.image" />
+      <a-image :src="product.image"/>
     </a-image-preview-group>
   </div>
 </template>
@@ -71,7 +77,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .container {
   margin: 0 auto;
 }
@@ -83,10 +89,18 @@ export default {
   margin: 10px;
 }
 .product-image {
-  max-width: 200px;
-  min-height: 120px;
+  width: 100% !important;
+  height: auto !important;
+  vertical-align: middle !important;
+  aspect-ratio: 3/2 !important;
+  object-fit: contain !important;
 }
-.loading{
+
+.preview-image{
+  mix-blend-mode: color-burn;
+}
+
+.loading {
   margin-left: 20%;
 }
 </style>

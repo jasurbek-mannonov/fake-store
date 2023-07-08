@@ -5,24 +5,34 @@
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
         <a-menu-item key="1">
           <pie-chart-outlined />
-          <span>Option 1</span>
+          <span>
+            <router-link to="/">All Products</router-link>
+          </span>
         </a-menu-item>
         <a-menu-item key="2">
           <desktop-outlined />
-          <span>Option 2</span>
+          <span>
+            <router-link to="/electronics">Electronics</router-link>
+          </span>
         </a-menu-item>
         <a-sub-menu key="sub1">
           <template #title>
             <span>
-              <user-outlined />
-              <span>User</span>
+              <skin-outlined />
+              <span>Clothes</span>
             </span>
           </template>
-          <a-menu-item key="3">Tom</a-menu-item>
-          <a-menu-item key="4">Bill</a-menu-item>
-          <a-menu-item key="5">Alex</a-menu-item>
+          <a-menu-item key="3">
+            <skin-outlined />
+            <router-link to="/menclothing"> Men Clothing</router-link>
+          </a-menu-item>
+          <a-menu-item key="4">
+            <skin-outlined />
+            <router-link to="/womenclothing"> Women Clothing</router-link>
+          </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="sub2">
+
+        <!-- <a-sub-menu key="sub2">
           <template #title>
             <span>
               <team-outlined />
@@ -31,11 +41,15 @@
           </template>
           <a-menu-item key="6">Team 1</a-menu-item>
           <a-menu-item key="8">Team 2</a-menu-item>
-        </a-sub-menu>
-        <a-menu-item key="9">
+        </a-sub-menu> -->
+        <!-- <a-menu-item key="9">
           <file-outlined />
-          <span>File</span>
+          <span>...</span>
         </a-menu-item>
+        <a-menu-item key="10">
+          <file-outlined />
+          <span>...</span>
+        </a-menu-item> -->
       </a-menu>
     </a-layout-sider>
     <a-layout>
@@ -53,20 +67,20 @@
 </template>
 
 <script>
-import { PieChartOutlined, DesktopOutlined, UserOutlined, TeamOutlined, FileOutlined } from '@ant-design/icons-vue';
+import { PieChartOutlined, DesktopOutlined, SkinOutlined, TeamOutlined, FileOutlined } from '@ant-design/icons-vue';
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
   components: {
     PieChartOutlined,
     DesktopOutlined,
-    UserOutlined,
+    SkinOutlined,
     TeamOutlined,
     FileOutlined,
   },
   data() {
     return {
       collapsed: ref(false),
-      selectedKeys: ref(['1']),
+      selectedKeys: ref(['1'])
     };
   },
 });
