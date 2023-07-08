@@ -60,7 +60,7 @@
         </div>
       </a-layout-content>
       <a-layout-footer style="text-align: center">
-        Ant Design ©2018 Created by Ant UED
+        Khadija dev group ©2023
       </a-layout-footer>
     </a-layout>
   </a-layout>
